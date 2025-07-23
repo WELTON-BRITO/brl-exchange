@@ -6,6 +6,18 @@ Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-c
 
 Execute `ng serve` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`.
 
+## Estrutura do projeto
+
+src/
+├── app/
+│   ├── components/
+│   │   └── exchange/
+│   │       └── exchange.component.ts|html|css
+│   ├── services/
+│   │   └── exchange.service.ts
+│   ├── app.module.ts
+│   └── app.component.html
+
 ## Funcionalidades
 
 - Consulta de taxa atual entre BRL e outra moeda informada (ex: USD, EUR)
