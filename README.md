@@ -8,7 +8,7 @@ Execute `ng serve` para um servidor de desenvolvimento. Navegue até `http://loc
 
 ## Estrutura do projeto
 
-src/
+├── src
 ├── app/
 │   ├── components/
 │   │   └── exchange/
@@ -17,6 +17,7 @@ src/
 │   │   └── exchange.service.ts
 │   ├── app.module.ts
 │   └── app.component.html
+
 
 ## Funcionalidades
 
