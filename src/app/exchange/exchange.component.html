@@ -1,0 +1,79 @@
+<div class="container mt-4">    
+    <img src="assets/actionlabs.png" alt="Logo" class="custom-logo" />
+    <div class="input-container mt-3">
+        <div class="floating-input">
+            <input class="uppercase-input" type="text" [(ngModel)]="currencyCode" required id="currency" (keypress)="allowOnlyLetters($event)"/>
+            <label for="currency">Enter the currency code</label>
+        </div>
+        <button class="styled-button mt-4" (click)="getCurrentRate()">
+            EXCHANGE RESULT
+        </button>
+    </div>
+    <div *ngIf="apiError" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+    <div *ngIf="currentRate" class="exchange-result-container">
+        <div class="exchange-header">
+            <div class="exchange-label-group">
+                <label class="exchange-label">Exchange rate now</label>
+            <div class="timestamp">{{ timestamp }}</div>
+            </div>
+            <span class="exchange-code">{{ currencyCode.toUpperCase() }}/BRL</span>
+        </div>
+        <div class="floating-input">
+            <input type="number" class="currency-input" [(ngModel)]="conversionValue" required id="valueToConvert"/>
+            <label for="valueToConvert">Enter amount to convert</label>
+        </div>
+        <div class="exchange-header mt-3" (click)="toggleLast30Days()">
+            <div class="exchange-label-group">
+                <label class="exchange-label">LAST 30 DAYS</label>
+            </div>
+            <span class="exchange-code">{{ showLast30Days ? '–' : '+' }}</span>
+            <span *ngIf="showLast30Days" class="clear-icon" title="Limpar"
+            (click)="clearLast30Days($event)">🧹 Limpar</span>
+        </div>
+        <div *ngIf="showLast30Days" class="card-list">
+            <div class="daily-card" *ngFor="let rate of dailyRates">
+                <div class="card-date">{{ rate.date | date: 'dd/MM/yyyy' }}</div>
+                <!-- Linha de valores convertidos -->
+                <div *ngIf="conversionValue">
+                <div class="card-row">
+                    <div>OPEN: <strong>R$ {{ (conversionValue / rate.open) | number:'1.4-4' }}</strong></div>
+                    <div>HIGH: <strong>R$ {{ (conversionValue / rate.high) | number:'1.4-4' }}</strong></div>
+                </div>
+                <div class="card-row">
+                    <div>CLOSE: <strong>R$ {{ (conversionValue / rate.close) | number:'1.4-4' }}</strong></div>
+                    <div>LOW: <strong>R$ {{ (conversionValue / rate.low) | number:'1.4-4' }}</strong></div>
+                </div>
+                </div>
+                <!-- Linha com os valores originais da moeda -->
+                <div *ngIf="!conversionValue">
+                <div class="card-row">
+                    <div>OPEN: <strong>R$ {{ rate.open | number: '1.4-4' }}</strong></div>
+                    <div>HIGH: <strong>R$ {{ rate.high | number: '1.4-4' }}</strong></div>
+                </div>
+                <div class="card-row">
+                    <div>CLOSE: <strong>R$ {{ rate.close | number: '1.4-4' }}</strong></div>
+                    <div>LOW: <strong>R$ {{ rate.low | number: '1.4-4' }}</strong></div>
+                </div>
+                </div>
+                <!-- Diff -->
+                <div class="card-row">
+                    <div class="close-diff">CLOSE DIFF(%):
+                        <span *ngIf="rate.closeDiff > 0" [ngClass]="'positive'">
+                            ▲ +{{ rate.closeDiff | number: '1.2-2' }}%
+                        </span>
+                        <span *ngIf="rate.closeDiff < 0" [ngClass]="'negative'">
+                            ▼ {{ rate.closeDiff | number: '1.2-2' }}%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- LINHA AZUL -->
+        <div class="blue-line"></div>        
+    </div>
+    <div class="footer-container">
+        <img src="assets/actionlabsrodape.png" alt="Footer" class="footer-logo" />
+    </div>
+</div>

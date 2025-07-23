@@ -1,0 +1,258 @@
+.custom-logo {
+  width: 330px;
+  height: 124px;
+  margin: 16px auto 0 auto;
+  display: block;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.floating-input {
+  position: relative;
+  width: 330px;
+  height: 56px;
+  margin-top: 20px;
+}
+
+.floating-input input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-bottom: 2px solid #000;
+  font-size: 16px;
+  outline: none;
+  padding: 8px 0;
+  background: transparent;
+}
+
+.floating-input label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+}
+
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown):valid + label {
+  top: -10px;
+  font-size: 12px;
+  color: #333;
+}
+
+.styled-button {
+  width: 330px;
+  height: 48px;
+  padding: 4px 16px;
+  background-color: #07b0fb;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 50px; /* altura do fundo */
+  background-color: #07B0FB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.footer-logo {
+  width: 360px;
+  height: 30px;
+}
+
+.exchange-result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza tudo */
+  margin-top: 30px;
+}
+
+.exchange-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 330px;
+  gap: 16px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.exchange-label-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.exchange-label {
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+  font-size: 18px; /* reduzido para não quebrar linha */
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.exchange-code {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: #07B0FB; /* cor ajustada */
+  text-transform: uppercase;
+   display: flex;
+  align-items: center;
+}
+
+.timestamp {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+/* reaproveita o mesmo estilo do input anterior */
+.floating-input {
+  position: relative;
+  width: 330px;
+  height: 56px;
+  margin-top: 20px;
+}
+
+.floating-input input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-bottom: 2px solid #07B0FB;
+  font-size: 16px;
+  outline: none;
+  padding: 8px 0;
+  background: transparent;
+}
+
+.floating-input label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+}
+
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown):valid + label {
+  top: -10px;
+  font-size: 12px;
+  color: #333;
+}
+
+.currency-input {
+  width: 330px;
+  height: 56px;
+  text-align: center;
+  color: #07B0FB;
+  font-size: 20px;
+  border: none;
+  border-bottom: 2px solid #07B0FB;
+  background: transparent;
+  padding: 8px 0;
+}
+
+.blue-line {
+  width: 330px;
+  height: 2px;
+  background-color: #07B0FB;
+  margin-left: 15px;
+  margin-top: 4px;
+}
+
+.date-list {
+  margin-left: 15px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #444;
+}
+
+.card-list {
+  width: 330px;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.daily-card {
+  background-color: #f3f3f3; /* neutral/Grey03 */
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.card-date {
+  color: #07B0FB;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+.container {
+  background-color: #fcfeff;
+  padding: 10px;
+  min-height: 100vh; /* Garante altura da tela toda */
+  box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 800px; /* define largura máxima */
+  margin: 0 auto;    /* centraliza horizontalmente */
+  border-radius: 8px; /* opcional: bordas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* opcional: sombra suave */
+}
+
+.uppercase-input {
+  text-transform: uppercase;
+}
+
+.exchange-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.clear-icon {
+  font-size: 14px;
+  color: red;
+  cursor: pointer;
+  user-select: none;
+}
