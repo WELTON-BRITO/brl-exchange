@@ -1,27 +1,42 @@
 # BrlExchange
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.1.
+Aplicação Angular 10 para consultar a taxa de câmbio do Real Brasileiro (BRL) em relação a outras moedas.
+Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) versão 10.2.1.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Execute `ng serve` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`.
 
-## Code scaffolding
+## Funcionalidades
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Consulta de taxa atual entre BRL e outra moeda informada (ex: USD, EUR)
+- Layout responsivo com Bootstrap, Html e css
+- Interface simples e intuitiva
 
-## Build
+🧭 Funcionalidades da Tela Principal
+A interface do sistema brl-exchange foi desenvolvida para ser simples e intuitiva. Abaixo estão as funcionalidades principais disponíveis na tela inicial:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+🔍 Botão "Pesquisar Moeda"
+Permite consultar a taxa de câmbio entre o Real Brasileiro (BRL) e a moeda informada pelo usuário (ex: USD, EUR).
 
-## Running unit tests
+A consulta é feita com base em dados dos últimos 30 dias.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Após clicar, os resultados são exibidos em formato de lista.
 
-## Running end-to-end tests
+➕ Botão "+" (Expandir Lista)
+Expande ou colapsa a lista de resultados da pesquisa.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Útil para exibir detalhes adicionais como data, valor de câmbio, ou variações diárias.
 
-## Further help
+🧹 Botão "Limpar"
+Limpa todos os campos da pesquisa.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Remove os dados exibidos anteriormente da tela.
+
+Restaura a interface ao estado inicial.
+
+⚠️ Tratativa de Erros
+Se o serviço de câmbio retornar um erro (ex: status 500), uma mensagem de erro é exibida na tela:
+
+Erro ao buscar taxa de câmbio. Verifique se a moeda informada é válida.
+
+Isso garante uma melhor experiência de uso e evita que o usuário fique sem resposta.
