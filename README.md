@@ -40,15 +40,3 @@ Se o serviço de câmbio retornar um erro (ex: status 500), uma mensagem de erro
 Erro ao buscar taxa de câmbio. Verifique se a moeda informada é válida.
 
 Isso garante uma melhor experiência de uso e evita que o usuário fique sem resposta.
-
-## Estrutura do projeto
-
-├── src
-├── app/
-│   ├── components/
-│   │   └── exchange/
-│   │       └── exchange.component.ts|html|css
-│   ├── services/
-│   │   └── exchange.service.ts
-│   ├── app.module.ts
-│   └── app.component.html
